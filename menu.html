@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        button {
+            background-color: green;
+            margin: 10px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            background-color: black;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            color: white;
+        }
+        .main1 {
+            min-height: 100%;
+            width: 100%;
+            background-color: red;
+            background: url(bgf.jpeg) no-repeat;
+            background-size: cover;
+            margin-top: 70px;
+            padding-bottom: 60px;
+        }
+        label {
+            font-size: 30px;
+            color: yellow;
+            width: 100%;
+        }
+        input[type=checkbox] {
+            width: 30px;
+            height: 30px;
+        }
+        input[type=number] {
+            width: 60px;
+            height: 30px;
+        }
+        label {
+            display: inline-block;
+            width: 700px;
+            margin-left: 50px;
+        }
+        .final {
+            margin-left: 600px;
+        }
+        .quantity {
+            margin-left: 100px;
+        }
+        .mspecial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: aqua;
+            height: 20px;
+            width: 100%;
+            font-size: 40px;
+            padding: 30px;
+        }
+        #total {
+            margin-left: 20%;
+            font-size: 24px;
+            color: white;
+        }
+        .btn1 {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 20px;
+        }
+        .place {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <nav>
+            <ul type="none">
+                <button><li><a href="index.html">Home</a></li></button>
+                <button><li><a href="menu.html">Menu</a></li></button>
+                <button><li><a href="#">About</a></li></button>
+                <button><li><a href="#">Contact</a></li></button>
+            </ul>
+        </nav>
+    </div>
+    
+    <form class="main1" id="myForm" action="connection.php" method="POST">
+        <div class="mspecial">Menu's Special (Veg)</div>
+        <div class="veg">
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'A', 'a')">   
+                <label>Paneer Tikka Masala: </label>
+                <input type="number" name="A" value="0" min="1" max="10" id="A" class="quantity" onchange="calculatePrice('A', 'a')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="a" value="100" min="100" id="a" data-base-price="100" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+            
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'B', 'b')">
+                <label>Veggie Korma: </label>
+                <input type="number" name="B" value="0" min="1" max="10" id="B" class="quantity" onchange="calculatePrice('B', 'b')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="b" value="200" min="200" id="b" data-base-price="200" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'C', 'c')">
+                <label>Dal Makhani: </label>
+                <input type="number" name="C" value="0" min="1" max="10" id="C" class="quantity" onchange="calculatePrice('C', 'c')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="c" value="300" min="300" id="c" data-base-price="300" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'D', 'd')">
+                <label>Palak Paneer: </label>
+                <input type="number" name="D" value="0" min="1" max="10" id="D" class="quantity" onchange="calculatePrice('D', 'd')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="d" value="400" min="400" id="d" data-base-price="400" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        </div>
+
+        <div class="mspecial">Menu's Special (Non Veg)</div>
+        
+        <div class="nonveg">
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'E', 'e')">   
+                <label>Chicken Biryani: </label>
+                <input type="number" name="E" value="0" min="1" max="10" id="E" class="quantity" onchange="calculatePrice('E', 'e')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="e" value="150" min="150" id="e" data-base-price="150" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+            
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'F', 'f')">
+                <label>Butter Chicken: </label>
+                <input type="number" name="F" value="0" min="1" max="10" id="F" class="quantity" onchange="calculatePrice('F', 'f')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="f" value="200" min="200" id="f" data-base-price="200" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'G', 'g')">
+                <label>Fish Curry: </label>
+                <input type="number" name="G" value="0" min="1" max="10" id="G" class="quantity" onchange="calculatePrice('G', 'g')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="g" value="250" min="250" id="g" data-base-price="250" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'H', 'h')">
+                <label>Mutton Rogan Josh: </label>
+                <input type="number" name="H" value="0" min="1" max="10" id="H" class="quantity" onchange="calculatePrice('H', 'h')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="h" value="300" min="300" id="h" data-base-price="300" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        </div>
+
+        <div class="mspecial">Menu's Special (Roti)</div>
+        
+        <div class="roti">
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'I', 'i')">   
+                <label>Tandoori Roti: </label>
+                <input type="number" name="I" value="0" min="1" max="10" id="I" class="quantity" onchange="calculatePrice('I', 'i')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="i" value="30" min="30" id="i" data-base-price="30" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+            
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'J', 'j')">
+                <label>Butter Naan: </label>
+                <input type="number" name="J" value="0" min="1" max="10" id="J" class="quantity" onchange="calculatePrice('J', 'j')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="j" value="40" min="40" id="j" data-base-price="40" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'K', 'k')">
+                <label>Garlic Naan: </label>
+                <input type="number" name="K" value="0" min="1" max="10" id="K" class="quantity" onchange="calculatePrice('K', 'k')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="k" value="50" min="50" id="k" data-base-price="50" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'L', 'l')">
+                <label>Plain Paratha: </label>
+                <input type="number" name="L" value="0" min="1" max="10" id="L" class="quantity" onchange="calculatePrice('L', 'l')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="l" value="60" min="60" id="l" data-base-price="60" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'M', 'm')">   
+                <label>Aloo Paratha: </label>
+                <input type="number" name="M" value="0" min="1" max="10" id="M" class="quantity" onchange="calculatePrice('M', 'm')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="m" value="70" min="70" id="m" data-base-price="70" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+            
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'N', 'n')">
+                <label>Paneer Paratha: </label>
+                <input type="number" name="N" value="0" min="1" max="10" id="N" class="quantity" onchange="calculatePrice('N', 'n')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="n" value="80" min="80" id="n" data-base-price="80" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'O', 'o')">
+                <label>Missi Roti: </label>
+                <input type="number" name="O" value="0" min="1" max="10" id="O" class="quantity" onchange="calculatePrice('O', 'o')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="o" value="90" min="90" id="o" data-base-price="90" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        
+            <div>
+                <input type="checkbox" class="checkbox" onclick="doenable(this, 'P', 'p')">
+                <label>Roomali Roti: </label>
+                <input type="number" name="P" value="0" min="1" max="10" id="P" class="quantity" onchange="calculatePrice('P', 'p')" disabled>
+                <span style="color:white;">(quantity)</span>
+                <input type="number" name="p" value="100" min="100" id="p" data-base-price="100" class="final" disabled>
+                <span style="color:white;">(Rs)</span><hr>
+            </div>
+        </div>
+
+        <div id="total">
+            Total Price: <span id="totalPrice">0</span> Rs
+        </div>
+        
+        <div class="place">
+            <input type="submit" class="btn1" value="Place Order">
+        </div>
+    </form>
+
+    <footer>
+        &copy; 2023 Your Restaurant Name
+    </footer>
+
+    <script>
+        function doenable(checkbox, inputId, priceId) {
+            const quantityInput = document.getElementById(inputId);
+            const priceInput = document.getElementById(priceId);
+            if (checkbox.checked) {
+                quantityInput.disabled = false;
+                priceInput.disabled = false;
+                quantityInput.value = 1;
+                calculatePrice(inputId, priceId);
+            } else {
+                quantityInput.disabled = true;
+                priceInput.disabled = true;
+                quantityInput.value = 0;
+                priceInput.value = priceInput.getAttribute('data-base-price');
+                calculateTotalPrice();
+            }
+        }
+
+        function calculatePrice(quantityId, priceId) {
+            const quantity = document.getElementById(quantityId).value;
+            const priceInput = document.getElementById(priceId);
+            const basePrice = priceInput.getAttribute('data-base-price');
+            priceInput.value = basePrice * quantity;
+            calculateTotalPrice();
+        }
+
+        function calculateTotalPrice() {
+            let totalPrice = 0;
+            const priceInputs = document.querySelectorAll('.final:not(:disabled)');
+            priceInputs.forEach(input => {
+                totalPrice += parseFloat(input.value);
+            });
+            document.getElementById('totalPrice').innerText = totalPrice;
+        }
+    </script>
+</body>
+</html>

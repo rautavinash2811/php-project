@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAM</title>
+    <style>
+        html,body
+        {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .navigation
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+    
+        }
+       ul
+       {
+        display: flex;
+       }
+       nav ul button
+       {
+        margin: 5px;
+        padding: 5px;
+        background-color: green;
+       }
+       ul li a
+       {
+        text-decoration: none;
+        color:white;
+       }
+       body div h2
+       {
+        color:white;
+        background-color: #333;
+        margin: 0;
+        height:60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .main
+       {
+        height: 100%;
+        height: 100%;
+        background: url('bgf.jpeg') no-repeat center center fixed;
+        background-size: cover;
+        
+       }
+       .welcome
+        {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10; /* Ensure it stays above other content */
+        }
+
+    .navigation
+      {
+        position: fixed;
+        top: 60px; /* Place it just below the .welcome */
+        width: 100%;
+        z-index: 10; /* Ensure it stays above other content */
+     }
+     footer
+     {
+        background-color: black;
+        position:fixed;
+        width: 100%;
+        bottom: 0;
+        color: white;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     h2 img
+     {
+        width: 35px;
+        height: 35px;
+        margin: 15px;
+     }
+     
+     .chef
+     {
+        margin-top: 100px;
+        padding: 0;
+        width: 100%;
+        height: 50%;
+        /* background-color: red;  */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         
+     }
+     .view
+     {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+     }
+     .btn
+     {
+        background-color: yellow;
+        border-radius: 25px;
+        color: black;
+        height: 50px;
+        width: 120px;
+        padding: 10px;
+        cursor: pointer;
+        
+     }
+     .menu
+     {
+        text-decoration: none;
+        font-size: large;
+        display: block;
+
+     }
+     .ex
+     {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+     }
+     .ch
+     {
+        margin-top: 100px;
+        height: 80%;
+        width: 30%;
+     }
+     .dis
+     {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 30px;
+     }
+     .navi:hover
+     {
+        background-color: yellow;
+        width: 60px;
+        border-radius: 25px;
+       a
+       {
+        color: black;
+       }
+     }
+     .navi:focus
+     {
+        background-color: red;
+     }
+     .wel:hover
+     {
+        background-color: yellow;
+        color: red;
+     }
+     .rest:active
+     {
+        background-color: aqua;
+        color: black;
+     }
+     .ch:hover
+     {
+        width: 50%;
+        height: 100%;
+     }
+     .btn:active
+     {
+        background-color: red;
+        .menu:active
+        {
+            color: aqua;
+        }
+     }
+     .btn:hover
+     {
+         background-color: green;
+         color: yellow;
+         b
+         {
+            color:white;
+         }
+     }
+     .ex:hover
+     {
+      color: yellow;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+     }
+     .dis:hover
+     {
+      color: aqua;
+      label:hover
+      {
+         background-color: #333;
+      }
+     }
+    
+     
+       
+    </style>
+</head>
+<body>
+    <div class="head">
+    <div class="welcome">
+        <h2 class="wel"> <img src="restaurent.jpg" alt="logo"><p class="rest">WELCOME TO AAM RESTAURENT!!!!</p> <img src="restaurent.jpg" alt="logo"></h2>
+    </div>
+    <div class="navigation">
+   <nav>
+    <ul type="none">
+        <button class="navi"><li><a href="index.html">Home</a></li></button>
+        <button class="navi"><li><a href="menu.html">Menu</a></li></button>
+        <button class="navi"><li><a href="">About</a></li></button>
+        <button class="navi"><li><a href="">Contact</a></li></button>
+    </ul>
+   </nav>
+    </div>
+</div>
+    <div class="main">
+        <div class="chef">
+         <img class="ch" src="chef.jpg" alt="chef image">
+        </div>
+            <div>
+            <p class="ex"><b>Experience the Flavors of Authenticity</b></p>
+            <p class="dis"><label>Discover the best of Indian cuisine in a cozy and vibrant atmosphere.</label></p>
+        </div>
+      
+        <div class="view">
+            <button class="btn"><a class="menu" href="menu.html" target="_main"><b>View Menu</b></a></button>
+        </div>
+    </div> 
+   
+<footer>
+    &copy; 2024 AAM RESTAURENT. All rights Preserved.
+</footer>
+</body>
+</html>
